@@ -1,0 +1,248 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.controls {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.text-input {
+  margin-bottom: 20px;
+}
+
+.text-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.text-input textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.text-input textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.connection-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.stream-btn, .disconnect-btn, .reset-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stream-btn {
+  background: #10b981;
+  color: white;
+}
+
+.stream-btn:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.stream-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.disconnect-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.disconnect-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.reset-btn {
+  background: #6b7280;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #4b5563;
+  transform: translateY(-2px);
+}
+
+.status {
+  font-weight: 600;
+  color: #333;
+}
+
+.connected {
+  color: #10b981;
+}
+
+.disconnected {
+  color: #6b7280;
+}
+
+.stream-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.stream-header {
+  padding: 20px 25px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.stream-header h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress-text {
+  font-weight: 600;
+  color: #374151;
+  min-width: 120px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.streamed-text {
+  padding: 25px;
+  min-height: 200px;
+}
+
+.no-text {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+.text-display {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1f2937;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.character {
+  display: inline-block;
+  animation: fadeInChar 0.3s ease-in-out;
+}
+
+@keyframes fadeInChar {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.completion-message {
+  margin-top: 20px;
+  padding: 15px;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #a7f3d0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .connection-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .progress-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .text-display {
+    font-size: 16px;
+  }
+}
